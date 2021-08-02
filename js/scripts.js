@@ -1,6 +1,6 @@
 var price , crust_price, topping_price ;
 let total = 0;
-function checkoutPizza( name,size,crust,topping, total ){
+function Deliverpizza( name,size,crust,topping, total ){
   this.name = name;
   this.size = size;
   this.crust = crust;
@@ -116,18 +116,18 @@ $(document).ready(function(){
             crust_price = 0;
           break;
           case "Flat Bread":
-            crust_price = 200;
+            crust_price = 90;
           break;
           case "Cheese Crust":
-            crust_price = 150;
+            crust_price = 120;
           break;
           case "Staffed Crust":
-            crust_price = 180;
+            crust_price = 150;
           break;
           default:
             console.log("No price"); 
         }
-        let topping_value = ptopping.length*50;
+        let topping_value = pizzatopping.length*100;
         console.log("toppins value" + topping_value);
         total = price + crust_price + topping_value;
         console.log(total);
@@ -135,7 +135,7 @@ $(document).ready(function(){
         checkoutTotal = checkoutTotal + total;
         console.log(checkoutTotal);
       // constractor function
-      var newOrder = new Getpizza(pname, psize, pcrust,ptopping,total);
+      var newOrder = new Deliverpizza(pname, psize, pcrust,ptopping,total);
 
       $("#ordersmade").append('<tr><td id="pizzaname">'+newOrder.name +'</td><td id="pizzasize">' + newOrder.size + '</td><td id="pizzacrust">'+newOrder.crust + '</td><td id="pizzatopping">'+newOrder.topping+'</td><td id="totals">'+newOrder.total+'</td></tr>');
       console.log(newOrder);
