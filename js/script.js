@@ -16,11 +16,11 @@ $(document).ready(function(){
    let pname = $(".name option:selected").val();
    let psize = $("#size option:selected").val();
    let pcrust = $("#crust option:selected").val();
-   let topping = [];
+   let ptopping = [];
    $.each($("input[name='toppings']:checked"), function(){            
-       topping.push($(this).val());
+       ptopping.push($(this).val());
    });
-   console.log(topping.join(", "));
+   console.log(ptopping.join(", "));
 
    switch(psize){
     case "0":
