@@ -16,7 +16,7 @@ $(document).ready(function(){
    let pname = $(".name option:selected").val();
    let psize = $("#size option:selected").val();
    let pcrust = $("#crust option:selected").val();
-   let pizzatopping = [];
+   let topping = [];
    $.each($("input[name='toppings']:checked"), function(){            
        topping.push($(this).val());
    });
