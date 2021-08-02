@@ -62,7 +62,7 @@
           <div class="one-forth d-flex js-fullheight align-items-center ftco-animate"
             data-scrollax=" properties: { translateY: '70%' }">
             <div class="text mt-md-5">
-              <h1 class="mb-4">Enjoy Delicious Pizza <br> Tantalizing Tastes</h1>
+              <h1 class="mb-4">Enjoy Delicious Pizza <br> with Tantalizing Tastes</h1>
               <p>There is no moment in life that can't be improved with Pizza <br>
                 Daria.</p>
               <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Make an Order</a></p>
@@ -83,7 +83,7 @@
           <div class="one-forth d-flex js-fullheight align-items-center ftco-animate"
             data-scrollax=" properties: { translateY: '70%' }">
             <div class="text mt-md-5">
-              <h1 class="mb-4">We Love <br> Delicious Foods</h1>
+              <h1 class="mb-4">We Love <br> Delicious our Pizza Hot and Sweet</h1>
               <p>A pizza slice a day keeps sadness away<br> Jet Paacal.</p>
               <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Book A Table</a></p>
 
@@ -299,6 +299,109 @@
         <!--  -->
 
   </section>
+  <div class="container-fluid order" id="make-order" <div class="order-overlay">
+    <div class="controls-top text-center" id="Order-now">
+      <h2>Make Your Order</h2>
+    </div>
+    <h2> Select Your Pizza and Let us Deliver it to You</h2>
+    <div class="row">
+      <div class="col-sm-5">
+        <form action="">
+          <label for="select">Chose Flavor</label>
+          <select class="browser-default custom-select custom-select-md mb-3 name">
+            <option value="Cheese Pizza">Cheese Pizza</option>
+            <option value="Veggie Pizza">Veggie Pizza</option>
+            <option value="Chicken Pizza">BBQ ChickenPizza</option>
+            <option value="Peproni Almond Pizza">Peproni Almond Pizza</option>
+            <option value="Beef Galore Pizza">Beef Galore Pizza</option>
+            <option value="Buffalo Stake Pizza">Buffalo Stake Pizza</option>
+          </select>
+          <label for="select">Chose Size</label>
+          <select class="browser-default custom-select custom-select-md mb-3" id="size">
+            <option selected value="0">Specify Size</option>
+            <option value="large">Large -- sh. 1800</option>
+            <option value="medium">Medium -- sh. 1200</option>
+            <option value="small">Small -- sh. 720</option>
+          </select>
+          <label for="crust"> Select Preffered Crust!</label>
+          <select class="browser-default custom-select custom-select-md mb-3" id="crust">
+            <option selected value="0"> Your crust!</option>
+            <option value="Crispy">Flat Bread -- sh. 90</option>
+            <option value="Stuffed">Cheese Crust -- sh. 120</option>
+            <option value="Gluten-free">Staffed Crust-- sh. 150</option>
+          </select>
+          <label for="Toppings">Select Your Toppings at sh. 50 each</label><br>
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input type="checkbox" class="custom-control-input" id="Sausage" value="Sausage" name="toppings">
+            <label class="custom-control-label" for="Sausage">Sausage</label>
+          </div>
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input type="checkbox" class="custom-control-input" id="Bacon" value="Bacon" name="toppings">
+            <label class="custom-control-label" for="Bacon">Bacon</label>
+          </div>
+          <div class="custom-control custom-checkbox custom-control-inline">
+            <input type="checkbox" class="custom-control-input" id="Mushrooms" value="Mushrooms" name="toppings">
+            <label class="custom-control-label" for="Mushrooms">Mushrooms</label>
+          </div>
+          <br><br>
+          <button type="submit" class="btn btn-orange proceed">Proceed</button>
+
+        </form>
+      </div>
+      <div class="col-sm-7">
+        <div id="information">
+          <p>Your order will be processed and delivered within one hour of placing.</p>
+          <p>Make sure you have the total amout for the order during order delivery delivery.</p>
+          <p>Incase of any comment of complaint, Please reach out to us as fast as possible.</p>
+          <p id="regards">Regards, Management</p>
+        </div>
+        <div class="choise">
+          <h2>Your Order is:</h2>
+          <div id="your-orders">
+            <table class="table table-sm  pizzatable">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Size</th>
+                  <th scope="col">Crust</th>
+                  <th scope="col">Topping</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody id="ordersmade">
+                <tr>
+                  <td id="pizzaname"></td>
+                  <td id="pizzasize"></td>
+                  <td id="pizzacrust"></td>
+                  <td id="pizzatopping"></td>
+                  <td id="totals"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p id="pizzatotal"></p>
+            <p id="totalbill"></p>
+            <p id="addedprice">Delivery will cost sh. 150</p>
+            <p id="finallmessage"></p>
+          </div>
+          <button class="btn btn-orange addPizza">Add Pizza</button>
+          <button class="btn btn-orange" id="checkout">Checkout</button>
+          <button class="btn btn-orange deliver">Home delivery?</button>
+        </div>
+        <div class="delivery">
+          <form action="">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control mb-3" placeholder="Name">
+              <input type="number" id="phone" class="form-control mb-3" placeholder="Pnone Number">
+              <input type="text" id="location" class="form-control mb-3" placeholder="Location for delivery">
+              <button class="btn btn-orange" id="final-order">Place Order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
 
 
 
@@ -308,7 +411,9 @@
         <div class="col-md-6 col-lg-3 offset-lg-3">
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">HotNsweet Pizza</h2>
-            <p>We are located at Pretige Plaza along Ngong Road at the second floor of the Mall. We process all orders within the shortest time possible and you can schedule your deivery with the rider immediately after making the order</p>
+            <p>We are located at Pretige Plaza along Ngong Road at the second floor of the Mall. We process all orders
+              within the shortest time possible and you can schedule your deivery with the rider immediately after
+              making the order</p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
               <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
