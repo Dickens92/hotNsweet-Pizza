@@ -18,9 +18,9 @@ $(document).ready(function(){
    let pcrust = $("#crust option:selected").val();
    let pizzatopping = [];
    $.each($("input[name='toppings']:checked"), function(){            
-       pizzatopping.push($(this).val());
+       topping.push($(this).val());
    });
-   console.log(pizzatopping.join(", "));
+   console.log(topping.join(", "));
 
    switch(psize){
     case "0":
@@ -56,7 +56,7 @@ $(document).ready(function(){
       default:
         console.log("No price"); 
     }
-    let topping_value = pizzatopping.length*100;
+    let topping_value = topping.length*100;
     console.log("toppins value" + topping_value);
 
     if((psize == "0") && (pcrust == "0")){
@@ -80,7 +80,7 @@ $(document).ready(function(){
     $("#pizzaname").html($(".name option:selected").val());
     $("#pizzasize").html( $("#size option:selected").val());
     $("#pizzacrust").html($("#crust option:selected").val());
-    $("#pizzatoppings").html(pizzatoppings.join(", "));
+    $("#pizzatoppings").html(toppings.join(", "));
     $("#totals").html(total);
     
 
@@ -88,11 +88,11 @@ $(document).ready(function(){
       let pname = $(".name option:selected").val();
       let psize = $("#size option:selected").val();
       let pcrust = $("#crust option:selected").val();
-      let pizzatopping = [];
+      let topping = [];
       $.each($("input[name='toppings']:checked"), function(){            
-          pizzatopping.push($(this).val());
+          topping.push($(this).val());
       });
-      console.log(pizzatoppings.join(", "));
+      console.log(toppings.join(", "));
       switch(psize){
         case "0":
           price =0;
@@ -127,7 +127,7 @@ $(document).ready(function(){
           default:
             console.log("No price"); 
         }
-        let topping_value = pizzatoppings.length*100;
+        let topping_value = toppings.length*100;
         console.log("toppins value" + topping_value);
         total = price + crust_price + topping_value;
         console.log(total);
@@ -162,8 +162,8 @@ $(document).ready(function(){
       $("button.Send").hide();
       $("#pizzatotal").hide();
       let sendingcost = checkoutTotal+150;
-      console.log("You will pay sh. "+sendingcost+" on delivery");
-      $("#totalbill").append("Your bill plus delivery fee is: "+ sendingcost);
+      console.log("The fullamount comes to Ksh. "+sendingcost+" on delivery");
+      $("#totalbill").append("The bill plus delivery fee is: "+ sendingcost);
     });
 
     // when one clicks place order button
@@ -183,12 +183,12 @@ $(document).ready(function(){
   
         $("#notification").append(person+", Your Order Details have been Received and after processing, it will be sent to "+location+ ". Carry Ksh. "+sendingcost);
         $("#totalbill").hide();
-        $("#finallmessage").slideDown(1200);
+        $("#notification").slideDown(1200);
       }
       else {
-        alert("Please fill in the details for delivery!");
-        $(".delivery").show();
-        $("button#final-order").show();
+        alert("Kindly provide details to aid in delivery of your order!");
+        $(".send").show();
+        $("button#last-order").show();
       }
     });
    event.preventDefault();

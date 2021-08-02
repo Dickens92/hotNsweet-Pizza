@@ -299,16 +299,17 @@
         <!--  -->
 
   </section>
-  <div class="container-fluid order" id="make-order" <div class="order-overlay">
+  <div class="container-fluid order" id="make-order" <div class="order-overlay" style="background-color: bisque;">
     <div class="controls-top text-center" id="Order-now">
       <h2>Make Your Order</h2>
     </div>
-    <h2> Select Your Pizza and Let us Deliver it to You</h2>
+    <h2 style="text-align: center;"> Select Your Pizza and Let us Deliver it to You</h2>
     <div class="row">
       <div class="col-sm-5">
         <form action="">
           <label for="select">Flavors</label>
           <select class="browser-default custom-select custom-select-md mb-3 name">
+            
             <option value="Cheese Pizza">Cheese Pizza</option>
             <option value="Veggie Pizza">Veggie Pizza</option>
             <option value="Chicken Pizza">BBQ ChickenPizza</option>
@@ -333,7 +334,7 @@
           <label for="Toppings">Select Your Toppings at Ksh 100 each</label><br>
           <div class="custom-control custom-checkbox custom-control-inline">
             <input type="checkbox" class="custom-control-input" id="Eggs" value="Eggs" name="toppings">
-            <label class="custom-control-label" for="Sausage">Eggs</label>
+            <label class="custom-control-label" for="Eggs">Eggs</label>
           </div>
           <div class="custom-control custom-checkbox custom-control-inline">
             <input type="checkbox" class="custom-control-input" id="Bacon" value="Bacon" name="toppings">
@@ -350,13 +351,13 @@
       </div>
       <div class="col-sm-7">
         <div id="information">
-          <p>Your order is processed and scheduled for delivery immediately.<br> We have a vibrant online team ready to
+          <p style="margin-top: 70px;">Your order is processed and scheduled for delivery immediately.<br> We have a vibrant online team ready to
             provide sufficient supportby confirming the order and ensure that the rider delivers in time <br>Please be
             ready with payment via Mpesa or mobile banking because our writers do not carry notes</p>
 
 
         </div>
-        <div class="Select">
+        <div class="Select" style="display: none;">
           <h2>Order Summary</h2>
           <div id="your-orders">
             <table class="table table-sm  packedpizza">
@@ -381,14 +382,15 @@
             </table>
             <p id="pizzatotal"></p>
             <p id="totalbill"></p>
-            <p id="addedprice">Delivery @ ksh. 140 only</p>
+            <p id="addedprice" style="display: none;">Delivery @ ksh. 140 only</p>
+            <p id="notification" style="display: none;"></p>
 
           </div>
           <button class="btn btn-orange addPizza">Add Pizza</button>
           <button class="btn btn-orange" id="checkout">Checkout</button>
-          <button class="btn btn-orange send">Send</button>
+          <button class="btn btn-orange send" style="display: none;">Send</button>
         </div>
-        <div class="send">
+        <div class="send" style="display: none;">
           <form action="">
             <div class="form-group">
               <input type="text" id="name" class="form-control mb-3" placeholder="Name">
