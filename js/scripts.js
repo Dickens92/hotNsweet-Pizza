@@ -92,7 +92,7 @@ $(document).ready(function(){
       $.each($("input[name='toppings']:checked"), function(){            
           pizzatopping.push($(this).val());
       });
-      console.log(pizzatopping.join(", "));
+      console.log(pizzatoppings.join(", "));
       switch(psize){
         case "0":
           price =0;
@@ -127,7 +127,7 @@ $(document).ready(function(){
           default:
             console.log("No price"); 
         }
-        let topping_value = pizzatopping.length*100;
+        let topping_value = pizzatoppings.length*100;
         console.log("toppins value" + topping_value);
         total = price + crust_price + topping_value;
         console.log(total);
@@ -135,35 +135,35 @@ $(document).ready(function(){
         checkoutTotal = checkoutTotal + total;
         console.log(checkoutTotal);
       // constractor function
-      var newOrder = new Deliverpizza(pname, psize, pcrust,ptopping,total);
+      var newOrder = new Deliverpizza(pname, psize, pcrust,pizzatoppings,total);
 
-      $("#ordersmade").append('<tr><td id="pizzaname">'+newOrder.name +'</td><td id="pizzasize">' + newOrder.size + '</td><td id="pizzacrust">'+newOrder.crust + '</td><td id="pizzatopping">'+newOrder.topping+'</td><td id="totals">'+newOrder.total+'</td></tr>');
+      $("#customerorders").append('<tr><td id="pizzaname">'+newOrder.name +'</td><td id="pizzasize">' + newOrder.size + '</td><td id="pizzacrust">'+newOrder.crust + '</td><td id="pizzatopping">'+newOrder.topping+'</td><td id="totals">'+newOrder.total+'</td></tr>');
       console.log(newOrder);
       
       
 
     });
     // Checkout button
-    $("button#checkout").click(function(){ 
-      $("button#checkout").hide();
+    $("button#Checkout").click(function(){ 
+      $("button#Checkout").hide();
       $("button.addPizza").hide();
-      $("button.deliver").slideDown(1000);
+      $("button.send").slideDown(1000);
       $("#addedprice").slideDown(1000);
-      console.log("Your total bills is sh. "+checkoutTotal);
-      $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
+      console.log("Please pay a total of Ksh. "+CheckoutTotal);
+      $("#pizzatotal").append("Your bill is sh. "+CheckoutTotal);
     });
 
     // home delivery button
-    $("button.deliver").click(function(){
-      $(".pizzatable").hide();
-      $(".choise h2").hide();
-      $(".delivery").slideDown(1000);
+    $("button.Send").click(function(){
+      $(".packedpizza").hide();
+      $(".select h2").hide();
+      $(".Send").slideDown(1000);
       $("#addedprice").hide();
-      $("button.deliver").hide();
+      $("button.Send").hide();
       $("#pizzatotal").hide();
-      let deliceryamount= checkoutTotal+150;
-      console.log("You will pay sh. "+deliceryamount+" on delivery");
-      $("#totalbill").append("Your bill plus delivery fee is: "+deliceryamount);
+      let sendingcost = checkoutTotal+150;
+      console.log("You will pay sh. "+sendingcost+" on delivery");
+      $("#totalbill").append("Your bill plus delivery fee is: "+ sendingcost);
     });
 
     // when one clicks place order button
@@ -172,16 +172,16 @@ $(document).ready(function(){
 
       $("#pizzatotal").hide();
       $(".delivery").hide();
-      $("button#final-order").hide();
-      let deliceryamount= checkoutTotal+150;
-      console.log("Final Bill is: "+deliceryamount);
+      $("button#last-order").hide();
+      let sendingcost= checkoutTotal+150;
+      console.log("Final Bill is: "+sendingcost);
       let person = $("input#name").val();
       let phone = $("input#phone").val();
-      let location = $("input#location").val();
+      let location = $("input#Pickup-location").val();
 
-      if ($("input#name").val() && $("input#phone").val() && $("input#location").val()!=""){
+      if ($("input#name").val() && $("input#phone").val() && $("input#Pickup-location").val()!=""){
   
-        $("#finallmessage").append(person+", We have recieved your order and it will be delivered to you at "+location+ ". Prepare sh. "+deliceryamount);
+        $("#notification").append(person+", Your Order Details have been Received and after processing, it will be sent to "+location+ ". Carry Ksh. "+sendingcost);
         $("#totalbill").hide();
         $("#finallmessage").slideDown(1200);
       }

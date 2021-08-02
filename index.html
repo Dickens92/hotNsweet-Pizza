@@ -332,7 +332,7 @@
           </select>
           <label for="Toppings">Select Your Toppings at Ksh 100 each</label><br>
           <div class="custom-control custom-checkbox custom-control-inline">
-            <input type="checkbox" class="custom-control-input" id="Sausage" value="Sausage" name="toppings">
+            <input type="checkbox" class="custom-control-input" id="Eggs" value="Eggs" name="toppings">
             <label class="custom-control-label" for="Sausage">Eggs</label>
           </div>
           <div class="custom-control custom-checkbox custom-control-inline">
@@ -359,7 +359,7 @@
         <div class="Select">
           <h2>Order Summary</h2>
           <div id="your-orders">
-            <table class="table table-sm  pizzatable">
+            <table class="table table-sm  packedpizza">
               <thead>
                 <tr>
                   <th scope="col">Name</th>
@@ -374,7 +374,7 @@
                   <td id="pizzaname"></td>
                   <td id="pizzasize"></td>
                   <td id="pizzacrust"></td>
-                  <td id="pizzatopping"></td>
+                  <td id="pizzatoppings"></td>
                   <td id="totals"></td>
                 </tr>
               </tbody>
@@ -386,15 +386,15 @@
           </div>
           <button class="btn btn-orange addPizza">Add Pizza</button>
           <button class="btn btn-orange" id="checkout">Checkout</button>
-          <button class="btn btn-orange deliver">Location</button>
+          <button class="btn btn-orange send">Send</button>
         </div>
-        <div class="delivery">
+        <div class="send">
           <form action="">
             <div class="form-group">
               <input type="text" id="name" class="form-control mb-3" placeholder="Name">
               <input type="number" id="phone" class="form-control mb-3" placeholder="Contact Number">
-              <input type="text" id="location" class="form-control mb-3" placeholder="Destination">
-              <button class="btn btn-black" id="final-order">Place Order</button>
+              <input type="text" id="Pickup-location" class="form-control mb-3" placeholder="Pickup-location">
+              <button class="btn btn-black" id="last-order">Place Order</button>
             </div>
           </form>
         </div>
