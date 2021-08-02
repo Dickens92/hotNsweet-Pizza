@@ -128,7 +128,7 @@ $(document).ready(function(){
             console.log("No price"); 
         }
         let topping_value = toppings.length*100;
-        console.log("toppins value" + topping_value);
+        console.log("toppings value" + topping_value);
         total = price + crust_price + topping_value;
         console.log(total);
 
@@ -144,13 +144,13 @@ $(document).ready(function(){
 
     });
     // Checkout button
-    $("button#Checkout").click(function(){ 
-      $("button#Checkout").hide();
+    $("button#checkout").click(function(){ 
+      $("button#checkout").hide();
       $("button.addPizza").hide();
       $("button.send").slideDown(1000);
       $("#addedprice").slideDown(1000);
-      console.log("Please pay a total of Ksh. "+CheckoutTotal);
-      $("#pizzatotal").append("Your bill is sh. "+CheckoutTotal);
+      console.log("Please pay a total of Ksh. "+checkoutTotal);
+      $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
     });
 
     // home delivery button
