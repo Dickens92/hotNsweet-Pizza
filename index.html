@@ -226,7 +226,7 @@
                   <h3>+Mushrooms</h3>
                 </div>
                 <div class="one-forth">
-                  <span class="price">Ksh 150</span>
+                  <span class="price">Ksh 100</span>
                 </div>
               </div>
 
@@ -240,7 +240,7 @@
                   <h3>+Bacon</h3>
                 </div>
                 <div class="one-forth">
-                  <span class="price">Ksh 200</span>
+                  <span class="price">Ksh 100</span>
                 </div>
               </div>
 
@@ -307,7 +307,7 @@
     <div class="row">
       <div class="col-sm-5">
         <form action="">
-          <label for="select">Chose Flavor</label>
+          <label for="select">Flavors</label>
           <select class="browser-default custom-select custom-select-md mb-3 name">
             <option value="Cheese Pizza">Cheese Pizza</option>
             <option value="Veggie Pizza">Veggie Pizza</option>
@@ -316,24 +316,24 @@
             <option value="Beef Galore Pizza">Beef Galore Pizza</option>
             <option value="Buffalo Stake Pizza">Buffalo Stake Pizza</option>
           </select>
-          <label for="select">Chose Size</label>
+          <label for="select">Sizes</label>
           <select class="browser-default custom-select custom-select-md mb-3" id="size">
             <option selected value="0">Specify Size</option>
             <option value="large">Large -- sh. 1800</option>
             <option value="medium">Medium -- sh. 1200</option>
             <option value="small">Small -- sh. 720</option>
           </select>
-          <label for="crust"> Select Preffered Crust!</label>
+          <label for="crust">Preffered Crust!</label>
           <select class="browser-default custom-select custom-select-md mb-3" id="crust">
             <option selected value="0"> Your crust!</option>
-            <option value="Crispy">Flat Bread -- sh. 90</option>
-            <option value="Stuffed">Cheese Crust -- sh. 120</option>
-            <option value="Gluten-free">Staffed Crust-- sh. 150</option>
+            <option value="Crispy">Flat Bread -- Ksh. 90</option>
+            <option value="Stuffed">Cheese Crust -- Ksh. 120</option>
+            <option value="Gluten-free">Staffed Crust-- Ksh. 150</option>
           </select>
-          <label for="Toppings">Select Your Toppings at sh. 50 each</label><br>
+          <label for="Toppings">Select Your Toppings at Ksh 100 each</label><br>
           <div class="custom-control custom-checkbox custom-control-inline">
             <input type="checkbox" class="custom-control-input" id="Sausage" value="Sausage" name="toppings">
-            <label class="custom-control-label" for="Sausage">Sausage</label>
+            <label class="custom-control-label" for="Sausage">Eggs</label>
           </div>
           <div class="custom-control custom-checkbox custom-control-inline">
             <input type="checkbox" class="custom-control-input" id="Bacon" value="Bacon" name="toppings">
@@ -344,19 +344,20 @@
             <label class="custom-control-label" for="Mushrooms">Mushrooms</label>
           </div>
           <br><br>
-          <button type="submit" class="btn btn-orange proceed">Proceed</button>
+          <button type="submit" class="btn btn-black proceed">Proceed</button>
 
         </form>
       </div>
       <div class="col-sm-7">
         <div id="information">
-          <p>Your order will be processed and delivered within one hour of placing.</p>
-          <p>Make sure you have the total amout for the order during order delivery delivery.</p>
-          <p>Incase of any comment of complaint, Please reach out to us as fast as possible.</p>
-          <p id="regards">Regards, Management</p>
+          <p>Your order is processed and scheduled for delivery immediately.<br> We have a vibrant online team ready to
+            provide sufficient supportby confirming the order and ensure that the rider delivers in time <br>Please be
+            ready with payment via Mpesa or mobile banking because our writers do not carry notes</p>
+
+
         </div>
-        <div class="choise">
-          <h2>Your Order is:</h2>
+        <div class="Select">
+          <h2>Order Summary</h2>
           <div id="your-orders">
             <table class="table table-sm  pizzatable">
               <thead>
@@ -368,7 +369,7 @@
                   <th scope="col">Total</th>
                 </tr>
               </thead>
-              <tbody id="ordersmade">
+              <tbody id="customerorders">
                 <tr>
                   <td id="pizzaname"></td>
                   <td id="pizzasize"></td>
@@ -380,20 +381,20 @@
             </table>
             <p id="pizzatotal"></p>
             <p id="totalbill"></p>
-            <p id="addedprice">Delivery will cost sh. 150</p>
-            <p id="finallmessage"></p>
+            <p id="addedprice">Delivery @ ksh. 140 only</p>
+
           </div>
           <button class="btn btn-orange addPizza">Add Pizza</button>
           <button class="btn btn-orange" id="checkout">Checkout</button>
-          <button class="btn btn-orange deliver">Home delivery?</button>
+          <button class="btn btn-orange deliver">Location</button>
         </div>
         <div class="delivery">
           <form action="">
             <div class="form-group">
               <input type="text" id="name" class="form-control mb-3" placeholder="Name">
-              <input type="number" id="phone" class="form-control mb-3" placeholder="Pnone Number">
-              <input type="text" id="location" class="form-control mb-3" placeholder="Location for delivery">
-              <button class="btn btn-orange" id="final-order">Place Order</button>
+              <input type="number" id="phone" class="form-control mb-3" placeholder="Contact Number">
+              <input type="text" id="location" class="form-control mb-3" placeholder="Distination">
+              <button class="btn btn-black" id="final-order">Place Order</button>
             </div>
           </form>
         </div>
@@ -443,7 +444,7 @@
   </footer>
 
 
-  <!-- loader -->
+
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
       <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
       <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
