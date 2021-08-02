@@ -57,19 +57,19 @@ $(document).ready(function(){
         console.log("No price"); 
     }
     let topping_value = topping.length*100;
-    console.log("toppins value" + topping_value);
+    console.log("topping value" + topping_value);
 
     if((psize == "0") && (pcrust == "0")){
       console.log("nothing selected");
       $("button.proceed").show();
       $("#information").show();
-      $("div.choise").hide();
+      $("div.select").hide();
       alert("Kindly chose your preffered size and crust or contact us for Guidance"); 
     }
     else{
       $("button.proceed").hide();
       $("#information").hide();
-      $("div.choise").slideDown(1000);
+      $("div.select").slideDown(1000);
     }
 
     total = price + crust_price + topping_value;
@@ -80,7 +80,7 @@ $(document).ready(function(){
     $("#pizzaname").html($(".name option:selected").val());
     $("#pizzasize").html( $("#size option:selected").val());
     $("#pizzacrust").html($("#crust option:selected").val());
-    $("#pizzatoppings").html(toppings.join(", "));
+    $("#pizzatoppings").html(ptoppings.join(", "));
     $("#totals").html(total);
     
 
@@ -88,9 +88,9 @@ $(document).ready(function(){
       let pname = $(".name option:selected").val();
       let psize = $("#size option:selected").val();
       let pcrust = $("#crust option:selected").val();
-      let topping = [];
+      let ptopping = [];
       $.each($("input[name='toppings']:checked"), function(){            
-          topping.push($(this).val());
+          ptopping.push($(this).val());
       });
       console.log(toppings.join(", "));
       switch(psize){
@@ -127,7 +127,7 @@ $(document).ready(function(){
           default:
             console.log("No price"); 
         }
-        let topping_value = toppings.length*100;
+        let topping_value = ptopping.length*100;
         console.log("toppings value" + topping_value);
         total = price + crust_price + topping_value;
         console.log(total);
