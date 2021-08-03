@@ -60,7 +60,7 @@ $(document).ready(function(){
     console.log("toppins value" + topping_value);
 
     if((psize == "0") && (pcrust == "0")){
-      console.log("nothing selected");
+      console.log("no selection");
       $("button.proceed").show();
       $("#information").show();
       $("div.select").hide();
@@ -92,7 +92,7 @@ $(document).ready(function(){
       $.each($("input[name='toppings']:checked"), function(){            
           ptopping.push($(this).val());
       });
-      console.log(toppings.join(", "));
+      console.log(ptoppings.join(", "));
       switch(psize){
         case "0":
           price =0;
@@ -118,23 +118,23 @@ $(document).ready(function(){
           case "Flat Bread":
             crust_price = 90;
           break;
-          case "Cheese Crust":
+          case "Cheese-crust":
             crust_price = 120;
           break;
-          case "Staffed Crust":
+          case "Staffed-crust":
             crust_price = 150;
           break;
           default:
             console.log("No price"); 
         }
         let topping_value = ptopping.length*100;
-        console.log("toppings value" + topping_value);
+        console.log("toppins value" + topping_value);
         total = price + crust_price + topping_value;
         console.log(total);
 
         checkoutTotal = checkoutTotal + total;
         console.log(checkoutTotal);
-      // constractor function
+  
       var newOrder = new Deliverpizza(pname, psize, pcrust,pizzatoppings,total);
 
       $("#customerorders").append('<tr><td id="pizzaname">'+newOrder.name +'</td><td id="pizzasize">' + newOrder.size + '</td><td id="pizzacrust">'+newOrder.crust + '</td><td id="pizzatopping">'+newOrder.topping+'</td><td id="totals">'+newOrder.total+'</td></tr>');
@@ -150,7 +150,7 @@ $(document).ready(function(){
       $("button.send").slideDown(1000);
       $("#addedprice").slideDown(1000);
       console.log("Please pay a total of Ksh. "+checkoutTotal);
-      $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
+      $("#pizzatotal").append("pay sh. "+checkoutTotal);
     });
 
    
@@ -163,7 +163,7 @@ $(document).ready(function(){
       $("#pizzatotal").hide();
       let sendingcost = checkoutTotal+150;
       console.log("The fullamount comes to Ksh. "+sendingcost+" on delivery");
-      $("#totalbill").append("The bill plus delivery fee is: "+ sendingcost);
+      $("#totalbill").append("The amount you should pay includsive of delivery fee is: "+ sendingcost);
     });
 
     
@@ -171,10 +171,10 @@ $(document).ready(function(){
       event.preventDefault();
 
       $("#pizzatotal").hide();
-      $(".delivery").hide();
+      $(".send").hide();
       $("button#last-order").hide();
       let sendingcost= checkoutTotal+150;
-      console.log("Final Bill is: "+sendingcost);
+      console.log("The full bill is: "+sendingcost);
       let person = $("input#name").val();
       let phone = $("input#phone").val();
       let location = $("input#Pickup-location").val();
