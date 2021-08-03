@@ -9,7 +9,7 @@ function Deliverpizza( name,size,crust,topping, total ){
 }
 
 
-// proceed button
+
 $(document).ready(function(){
   
   $("button.proceed").click(function(event){
@@ -44,14 +44,14 @@ $(document).ready(function(){
       case "0":
         crust_price = 0;
       break;
-      case "Flat Bread":
-        crust_price = 200;
+      case "Flat-bread":
+        crust_price = 90;
       break;
-      case "Cheese Crust":
-        crust_price = 250;
+      case "Cheese-crust":
+        crust_price = 120;
       break;
-      case "Staffed Crust":
-        crust_price = 180;
+      case "Staffed-crust":
+        crust_price = 150;
       break;
       default:
         console.log("No price"); 
@@ -143,7 +143,7 @@ $(document).ready(function(){
       
 
     });
-    // Checkout button
+   
     $("button#checkout").click(function(){ 
       $("button#checkout").hide();
       $("button.addPizza").hide();
@@ -153,7 +153,7 @@ $(document).ready(function(){
       $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
     });
 
-    // home delivery button
+   
     $("button.Send").click(function(){
       $(".packedpizza").hide();
       $(".select h2").hide();
@@ -166,7 +166,7 @@ $(document).ready(function(){
       $("#totalbill").append("The bill plus delivery fee is: "+ sendingcost);
     });
 
-    // when one clicks place order button
+    
     $("button#final-order").click(function(event){
       event.preventDefault();
 
